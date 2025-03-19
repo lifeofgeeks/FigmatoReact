@@ -22,14 +22,7 @@ const ProfileCard = () => {
   return (
     <VStack pt={5} spacing={4} w="100%" maxW="370px" mx={isMobile && "auto"}>
       {/* TOP SECTION - Background Image + Profile Info */}
-      <Box
-        w="full"
-        bg="white"
-        rounded="lg"
-        boxShadow="md"
-        overflow="hidden"
-        pb={6}
-      >
+      <Box w="full" bg="white" rounded="lg" overflow="hidden" pb={6}>
         {/* Cover Image */}
         <Box
           position="relative"
@@ -47,8 +40,7 @@ const ProfileCard = () => {
             bottom="-40px"
             left="50%"
             transform="translateX(-50%)"
-            border="4px solid white"
-            boxShadow="lg"
+            border="1px solid white"
           />
         </Box>
 
@@ -73,7 +65,7 @@ const ProfileCard = () => {
       </Box>
 
       {/* STATS SECTION - Separate Box */}
-      <Box w="full" bg="white" rounded="lg" boxShadow="md" p={4}>
+      <Box w="full" bg="white" rounded="lg" p={4}>
         <VStack spacing={3} w="full">
           <HStack justify="space-between" w="full">
             <Text fontWeight="medium" fontSize="14px" color="#333333">
