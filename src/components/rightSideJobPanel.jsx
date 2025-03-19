@@ -26,8 +26,7 @@ import SearchLogo from "../assets/searchWhite.png";
 const JobCard = ({ promoted }) => {
   // comment
   const cardWidth = useBreakpointValue({
-    base: "95%",
-    sm: "95%",
+    sm: "100%",
     sm2: "210px",
     md: "210px",
   });
@@ -184,7 +183,7 @@ const JobPanel = () => {
           gap={2}
           wrap="wrap"
           align="center"
-          direction={{ base: "column", md: "row" }}
+          // direction={{ base: "column", md: "row" }}
         >
           <Text fontWeight="medium" fontSize="14px" color="#737A91">
             Similar:
