@@ -24,6 +24,7 @@ import { FaUsers } from "react-icons/fa";
 import TeamsLogo from "../assets/TeamsLogo.png";
 import SearchLogo from "../assets/searchWhite.png";
 const JobCard = ({ promoted }) => {
+  // comment
   const cardWidth = useBreakpointValue({
     base: "95%",
     sm: "95%",
