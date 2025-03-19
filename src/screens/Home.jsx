@@ -19,12 +19,18 @@ import {
   InputLeftElement,
   Spacer,
   useBreakpointValue,
+  Image,
 } from "@chakra-ui/react";
 
-import { FiSearch, FiBookmark } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiChevronUp,
+  FiSearch,
+  FiBookmark,
+} from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
 import { useState } from "react";
-
+// import { FiMapPin, FiClock } from "react-icons/fi";
 import Navbar from "../components/Nav";
 import JobPanel from "../components/rightSideJobPanel";
 
@@ -117,22 +123,94 @@ const ProfileCard = () => {
       </Box>
 
       {/* CALENDAR SECTION - Separate Box */}
-      <Box w="full" bg="white" rounded="lg" boxShadow="md" p={4}>
+      <Box w="full" bg="white" rounded="10px" p={2}>
         <HStack
-          w="full"
+          // w="full"
           justify="space-between"
           cursor="pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <Text fontSize="md" fontWeight="bold">
-            My calendar
-          </Text>
-          <IconButton size="sm" variant="ghost" aria-label="Expand Calendar" />
+          <VStack align="start" spacing={0}>
+            <Text color="#333333" fontSize="16px" fontWeight="semibold">
+              My calendar
+            </Text>
+            <Text color="#737A91" fontSize="14px" fontWeight="medium">
+              Upcoming Interviews
+            </Text>
+          </VStack>
+          <IconButton
+            as={isOpen ? FiChevronUp : FiChevronDown}
+            size="xs"
+            mr="1"
+            fontWeight="light"
+            color="#333333"
+            variant="ghost"
+            aria-label="Expand Calendar"
+          />
         </HStack>
         <Collapse in={isOpen} animateOpacity>
-          <Text fontSize="sm" color="blue.500" pt={2}>
-            Upcoming Interviews
-          </Text>
+          <VStack spacing={0}>
+            {[1, 2, 3].map((item) => (
+              <Box
+                key={item}
+                display="flex"
+                alignItems="center"
+                justifyContent="space-between"
+                bg="white"
+                p={3} // Reduced padding for a compact look
+                borderRadius="md"
+                boxShadow="sm"
+                width="350px" // Adjusted to fit better
+              >
+                {/* Left Section */}
+                <HStack spacing={2}>
+                  <Image
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
+                    alt="Figma Logo"
+                    bg="#f7faff"
+                    boxSize="27px" // Smaller icon
+                  />
+                  <VStack align="start" spacing={0} lineHeight="short">
+                    <Text color="#333333" fontWeight="semibold" fontSize="sm">
+                      UI UX Designer
+                    </Text>
+                    <Text fontSize="12px" color="#737A91">
+                      Figma
+                    </Text>
+                    <Text fontSize="12px" color="#737A91">
+                      16th Feb | 13:45 | Remote
+                    </Text>
+                  </VStack>
+                </HStack>
+
+                {/* Right Section */}
+                <HStack spacing={2}>
+                  <Badge
+                    bg="#95ffd6"
+                    px={2}
+                    color="#21a370"
+                    py={0.5}
+                    borderRadius="md"
+                    fontWeight="medium"
+                    fontSize="13px"
+                    textTransform="none"
+                  >
+                    Accepted
+                  </Badge>
+                  <Button
+                    fontWeight="medium"
+                    variant="ghost"
+                    size="xs"
+                    color="#767d92"
+                    bg="#f7faff"
+                    p={0}
+                  >
+                    Deny
+                  </Button>
+                </HStack>
+              </Box>
+            ))}
+          </VStack>
         </Collapse>
       </Box>
     </VStack>
@@ -156,8 +234,9 @@ const Home = () => {
       >
         {/* Sidebar */}
         <ProfileCard />
-        {/* Job Panel */}
-        <JobPanel />
+        <Box maxW={"1200px"}>
+          <JobPanel />
+        </Box>
       </Flex>
     </Box>
   );
