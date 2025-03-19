@@ -13,18 +13,11 @@ import {
   Spacer,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import {
-  FiChevronDown,
-  FiChevronUp,
-  FiBookmark,
-  FiMapPin,
-  FiClock,
-} from "react-icons/fi";
+import { FiBookmark, FiMapPin, FiClock } from "react-icons/fi";
 import { FaUsers } from "react-icons/fa";
 import TeamsLogo from "../assets/TeamsLogo.png";
 import SearchLogo from "../assets/searchWhite.png";
 const JobCard = ({ promoted }) => {
-  // comment
   const cardWidth = useBreakpointValue({
     sm: "100%",
     sm2: "210px",
@@ -178,13 +171,7 @@ const JobPanel = () => {
           </Button>
         </Flex>
         {/* Section */}
-        <Flex
-          mt={4}
-          gap={2}
-          wrap="wrap"
-          align="center"
-          // direction={{ base: "column", md: "row" }}
-        >
+        <Flex mt={4} gap={2} wrap="wrap" align="center">
           <Text fontWeight="medium" fontSize="14px" color="#737A91">
             Similar:
           </Text>

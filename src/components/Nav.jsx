@@ -17,11 +17,10 @@ import {
   DrawerCloseButton,
   VStack,
   useDisclosure,
-  Icon,
   useBreakpointValue,
   HStack,
 } from "@chakra-ui/react";
-import { FiSearch, FiMenu, FiUser } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import NavLogo from "../assets/Group.png";
 import SearchLogo from "../assets/search.png";
 
@@ -50,7 +49,6 @@ const Navbar = () => {
             h="40px"
           />
           <Text
-            // display={{ base: "none", lg: "block" }}
             fontSize="md"
             fontWeight="bold"
             color="primaryColor"
@@ -67,7 +65,7 @@ const Navbar = () => {
           color="gray.600"
           gap={6}
           fontWeight="medium"
-          display={{ base: "none", "2lg": "flex" }} // Hidden below lg screens
+          display={{ base: "none", "2lg": "flex" }}
         >
           {[
             "Top Companies",
@@ -89,9 +87,9 @@ const Navbar = () => {
         <Flex gap="15px" align="center">
           {/* Search Bar */}
           <InputGroup
-            w={{ base: "100px", "2xl": "261px", lg: "130px" }} // Smaller on small screens
+            w={{ base: "100px", "2xl": "261px", lg: "130px" }}
             mr={4}
-            display={{ base: "none", md: "flex" }} // Hide on very small screens
+            display={{ base: "none", md: "flex" }}
             height="39px"
           >
             <InputLeftElement pointerEvents="none">
@@ -117,32 +115,19 @@ const Navbar = () => {
             bg="primaryColor"
             color="white"
             borderRadius="8px"
-            // px={5}
-            // h="36px"
             py="10px"
             px="20px"
             fontSize="16px"
             fontWeight="medium"
             _hover={{ bg: "blue.800" }}
-            // display={{ base: "none", md: "block" }}
           >
             Resume Builder
           </Button>
-
-          {/* Profile Icon (Shows instead of Avatar on Small Screens) */}
-
-          {/* <IconButton
-            icon={<FiUser size={20} />}
-            aria-label="Profile"
-            variant="ghost"
-            display={{ base: "block", md: "none" }}
-          /> */}
         </Flex>
         <Avatar
           src="https://s3-alpha-sig.figma.com/img/62d2/428b/cb73207b8b2bb07f3ab9c3d4131e734f?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hFmxAz62hGNmB8Mt0LzbZ4LB7KCzapbR3V0zQ5eHYOd0LknO2j5tq2jZrd2y2g8rDYnqfuWQaWyTY8gKGU7bx8TlgNB1oKRs8fM7QWcpePdGyvbp~MbVnKk~4iqWQRDpipJeJcR3IEvliyeBWz2trutfJR~JEdv6Cx290qVorOYvgstZZIgkXHZAsU8T~OFnLTQ4Kuf~NCX0y00g-0hUUJ4dVzU5KdYVdguihjTIvisS9clu7jjWFt~byjq92eLyFJqTOuWPRtTL2fiasz4~C4kElU5SuBc7~YHgkXCj88YTiywRgQJvGtxmX-M-naWIddNyvaEHxisB14ROH9HZIA__"
           ml={4}
           boxSize={"10"}
-          // display={{ base: "none", md: "block" }}
         />
 
         {/* Mobile Drawer Menu */}
@@ -162,23 +147,15 @@ const Navbar = () => {
                       bg="primaryColor"
                       color="white"
                       borderRadius="8px"
-                      // px={5}
-                      // h="36px"
                       py="10px"
                       px="20px"
                       fontSize="16px"
                       fontWeight="medium"
                       _hover={{ bg: "blue.800" }}
-                      // display={{ base: "none", md: "block" }}
                     >
                       Resume Builder
                     </Button>
                   )}
-                  {/* <Avatar
-                    size="md"
-                    name="User"
-                    src="https://via.placeholder.com/150"
-                  /> */}
                 </HStack>
                 {[
                   "Find Jobs",
