@@ -138,21 +138,23 @@ const JobPanel = () => {
             border="none"
             _focus={{ outline: "none" }}
           />
-          {!isMobile && <Divider orientation="vertical" h="50px" />}
+          {!isMobile && <Divider orientation="vertical" h="45px" />}
 
           <Select
             fontSize="14px"
             fontWeight="medium"
             placeholder="Select Location"
+            color="#585D6E"
             flex={1}
             border="none"
           />
-          {!isMobile && <Divider orientation="vertical" h="50px" />}
+          {!isMobile && <Divider orientation="vertical" h="45px" />}
 
           <Select
             fontSize="14px"
             fontWeight="medium"
             placeholder="Job Type"
+            color="#585D6E"
             flex={1}
             border="none"
           />

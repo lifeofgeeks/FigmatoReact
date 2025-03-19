@@ -62,7 +62,7 @@ const Navbar = () => {
         <Flex
           ml={8}
           fontSize={{ base: "10px", "2xl": "16px", lg: "12px", "1xl": "15px" }}
-          color="gray.600"
+          color="#737A91"
           gap={6}
           fontWeight="medium"
           display={{ base: "none", "2lg": "flex" }}

@@ -6,7 +6,7 @@ import ProfileCard from "../components/ProfileCard";
 
 const Home = () => {
   return (
-    <Box>
+    <Box overflow="hidden">
       {/* Navbar */}
       <Navbar />
 
