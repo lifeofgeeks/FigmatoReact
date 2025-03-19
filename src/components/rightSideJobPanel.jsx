@@ -23,84 +23,92 @@ import {
 import { FaUsers } from "react-icons/fa";
 import TeamsLogo from "../assets/TeamsLogo.png";
 import SearchLogo from "../assets/searchWhite.png";
-const JobCard = ({ promoted }) => (
-  <Box borderRadius="10px" p={2} w="210px" bg="white">
-    {promoted == true && (
-      <Badge
-        textTransform="none"
-        pl={3}
-        fontSize="10px"
-        fontWeight="semibold"
-        bg="#ffffff"
-      >
-        Promoted
-      </Badge>
-    )}
+const JobCard = ({ promoted }) => {
+  const cardWidth = useBreakpointValue({
+    base: "95%",
+    sm: "95%",
+    sm2: "210px",
+    md: "210px",
+  });
 
-    <HStack pt={!promoted && 2}>
-      <Box paddingLeft={3} borderRadius="md">
-        <img
-          src={TeamsLogo}
-          style={{ paddingBottom: 13 }}
-          width="23px"
-          height="23px"
-          alt=""
-        />
-      </Box>
-      <VStack pb={3} align="start" pl={3} spacing={0}>
-        <Text fontWeight="medium" fontSize="14px">
-          UI/UX Designer
-        </Text>
-        <Text fontSize="12px" fontWeight="medium">
-          Teams
-        </Text>
-      </VStack>
-    </HStack>
-    <VStack align="start" pl={2} spacing={1}>
-      <HStack spacing={1}>
-        <Icon as={FiMapPin} color="#585D6E" boxSize={4} />
-        <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
-          Seattle, USA (Remote)
-        </Text>
-      </HStack>
-      <HStack spacing={1}>
-        <Icon as={FiClock} color="#585D6E" boxSize={4} />
-        <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
-          1 day ago
-        </Text>
-        <Divider
-          borderColor="gray.500"
-          borderWidth="1px"
-          h={3}
-          orientation="vertical"
-        />
-        <Text
-          fontWeight="medium"
-          cursor="pointer"
-          fontSize="12px"
-          color="#0154ab"
+  return (
+    <Box borderRadius="10px" p={2} w={cardWidth} bg="white">
+      {promoted && (
+        <Badge
+          textTransform="none"
+          pl={3}
+          fontSize="10px"
+          fontWeight="semibold"
+          bg="#ffffff"
         >
-          22 Applicants
-        </Text>
+          Promoted
+        </Badge>
+      )}
+      <HStack pt={!promoted && 2}>
+        <Box paddingLeft={3} borderRadius="md">
+          <img
+            src={TeamsLogo}
+            style={{ paddingBottom: 13 }}
+            width="23px"
+            height="23px"
+            alt=""
+          />
+        </Box>
+        <VStack pb={3} align="start" pl={3} spacing={0}>
+          <Text fontWeight="medium" fontSize="14px">
+            UI/UX Designer
+          </Text>
+          <Text fontSize="12px" fontWeight="medium">
+            Teams
+          </Text>
+        </VStack>
       </HStack>
-    </VStack>
-    <Flex px={2} justifyContent="space-between" mt={2} align="center">
-      <Button
-        backgroundColor="primaryColor"
-        colorScheme="blue"
-        w="115px"
-        h="37px"
-        borderRadius="6"
-        fontWeight="medium"
-        fontSize="12px"
-      >
-        Apply Now
-      </Button>
-      <Spacer />
-      <Icon as={FiBookmark} boxSize={6} color="#AAAAAA" cursor="pointer" />
-    </Flex>
-  </Box>
-);
+      <VStack align="start" pl={2} spacing={1}>
+        <HStack spacing={1}>
+          <Icon as={FiMapPin} color="#585D6E" boxSize={4} />
+          <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
+            Seattle, USA (Remote)
+          </Text>
+        </HStack>
+        <HStack spacing={1}>
+          <Icon as={FiClock} color="#585D6E" boxSize={4} />
+          <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
+            1 day ago
+          </Text>
+          <Divider
+            borderColor="gray.500"
+            borderWidth="1px"
+            h={3}
+            orientation="vertical"
+          />
+          <Text
+            fontWeight="medium"
+            cursor="pointer"
+            fontSize="12px"
+            color="#0154ab"
+          >
+            22 Applicants
+          </Text>
+        </HStack>
+      </VStack>
+      <Flex px={2} justifyContent="space-between" mt={2} align="center">
+        <Button
+          backgroundColor="primaryColor"
+          colorScheme="blue"
+          w="115px"
+          h="37px"
+          borderRadius="6"
+          fontWeight="medium"
+          fontSize="12px"
+        >
+          Apply Now
+        </Button>
+        <Spacer />
+        <Icon as={FiBookmark} boxSize={6} color="#AAAAAA" cursor="pointer" />
+      </Flex>
+    </Box>
+  );
+};
 const JobPanel = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -260,7 +268,7 @@ const JobPanel = () => {
             <JobCard key={index} />
           ))}
         </Flex>
-        <Divider p={2} my={2} />
+        <Divider p={3} my={2} />
         <Flex pb={3} mt={6} align="center">
           <Text fontSize="lg" fontWeight="medium">
             Latest Jobs
