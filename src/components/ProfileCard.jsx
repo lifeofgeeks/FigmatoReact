@@ -14,7 +14,8 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
+import Cover from "../assets/Cover.png";
+import Profile from "../assets/Oval.png";
 const ProfileCard = () => {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useBreakpointValue({ base: true, "2lg": false });
@@ -34,14 +35,14 @@ const ProfileCard = () => {
           position="relative"
           w="full"
           h="120px"
-          bgImage="url('https://s3-alpha-sig.figma.com/img/f7b7/cb33/145f7000c3fac5cc4d409f31a3de3686?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=s3W8B9BHQTVyEYO9WsoTZTJksWQNC--VxDbgcbNT0skfUUAyazaOFvhuvyLAXYnQXjBOHuDNwhCpvWy5AbdVn5djjjwLOXfquyfAYhwzksrdCNY4KoYJveSnyF-BscVuI-kugbZMYG4gqU~UF~BmN4~3AWC69B-sbmtTe1GkG57AcJMpg~BWmUUvfsdTl-2hZtBHtcta-YQ6nHRCFSOJAjwHh1k2fyb5s8YJg8D6ilhQfOueFYOern1NzT44VgwliYtnpR7qNRj~DWeVRTGz-jlpTg-rxnQI-s6yxxesxBNgomnMp0IHVFkTVcc66gWYss7Fef781GBmRFhML2OeOA__')"
+          bgImage={Cover}
           bgSize="cover"
           bgPosition="center"
         >
           {/* Profile Picture */}
           <Avatar
             size="xl"
-            src="https://s3-alpha-sig.figma.com/img/392f/c8a2/2c6eed8d401c7a77703ee92f86e797b1?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=e~a1gtMWszV4ypMeMXRXdNJzl5UvxzU6zyORG-KOW0Bs0nKGC5TT39Ub7-rDwNJ9gNb9hsUI9FC6khxQU4jP9vzkl1N4kbGDAbIDcCVUUFx8Grsz7njNm-WDor3N7ICoPIb8gZixzQjLmw1yiTuUvWpk2IeP6V15p68w4Io7Ztxv4Fr2AiIBoJLF7Vywqoa99QvgGhqtRnCPsgWx6XbZUJJKEXSpR7-jkLVQ-zOb1bbRQ5J1MbDiGi04g4Yz6VECcgGxdyBgNjAWeIEIKivBbRot56lAvmRe8jJI9zoHhmWGIT56hNVW8dFXKO7c8dHDtEiUSXbZOnBkCk17fIMDNg__"
+            src={Profile}
             position="absolute"
             bottom="-40px"
             left="50%"

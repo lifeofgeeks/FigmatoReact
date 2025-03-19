@@ -23,7 +23,7 @@ import {
 import { FiMenu } from "react-icons/fi";
 import NavLogo from "../assets/Group.png";
 import SearchLogo from "../assets/search.png";
-
+import NavProf from "../assets/Rectangle Nav.png";
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const midScreen = useBreakpointValue({ base: true, md: false });
@@ -124,11 +124,7 @@ const Navbar = () => {
             Resume Builder
           </Button>
         </Flex>
-        <Avatar
-          src="https://s3-alpha-sig.figma.com/img/62d2/428b/cb73207b8b2bb07f3ab9c3d4131e734f?Expires=1743379200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=hFmxAz62hGNmB8Mt0LzbZ4LB7KCzapbR3V0zQ5eHYOd0LknO2j5tq2jZrd2y2g8rDYnqfuWQaWyTY8gKGU7bx8TlgNB1oKRs8fM7QWcpePdGyvbp~MbVnKk~4iqWQRDpipJeJcR3IEvliyeBWz2trutfJR~JEdv6Cx290qVorOYvgstZZIgkXHZAsU8T~OFnLTQ4Kuf~NCX0y00g-0hUUJ4dVzU5KdYVdguihjTIvisS9clu7jjWFt~byjq92eLyFJqTOuWPRtTL2fiasz4~C4kElU5SuBc7~YHgkXCj88YTiywRgQJvGtxmX-M-naWIddNyvaEHxisB14ROH9HZIA__"
-          ml={4}
-          boxSize={"10"}
-        />
+        <Avatar src={NavProf} ml={4} boxSize={"10"} />
 
         {/* Mobile Drawer Menu */}
         <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
