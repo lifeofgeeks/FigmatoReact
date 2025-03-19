@@ -160,7 +160,6 @@ const Navbar = () => {
                   )}
                 </HStack>
                 {[
-                  "Find Jobs",
                   "Top Companies",
                   "Job Tracker",
                   "My Calendar",
