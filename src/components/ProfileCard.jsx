@@ -111,7 +111,7 @@ const ProfileCard = () => {
           cursor="pointer"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <VStack align="start" spacing={0}>
+          <VStack pl={1} align="start" spacing={0}>
             <Text color="#333333" fontSize="16px" fontWeight="semibold">
               My calendar
             </Text>

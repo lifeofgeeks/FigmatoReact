@@ -21,7 +21,7 @@ const Home = () => {
         <ProfileCard />
 
         {/* JobPanel */}
-        <Box maxW={"1200px"}>
+        <Box maxW={"1300px"}>
           <JobPanel />
         </Box>
       </Flex>

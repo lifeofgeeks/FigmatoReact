@@ -18,14 +18,22 @@ import { FaUsers } from "react-icons/fa";
 import TeamsLogo from "../assets/TeamsLogo.png";
 import SearchLogo from "../assets/searchWhite.png";
 const JobCard = ({ promoted }) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
+  const bigScreens = useBreakpointValue({ base: true, "2xl": false });
   const cardWidth = useBreakpointValue({
     sm: "100%",
-    sm2: "210px",
-    md: "210px",
+    sm2: "200px",
+    md: "200px",
   });
 
   return (
-    <Box borderRadius="10px" p={2} w={cardWidth} bg="white">
+    <Box
+      mx={!bigScreens && "auto"}
+      borderRadius="10px"
+      p={2}
+      w={cardWidth}
+      bg="white"
+    >
       {promoted && (
         <Badge
           textTransform="none"
@@ -37,17 +45,19 @@ const JobCard = ({ promoted }) => {
           Promoted
         </Badge>
       )}
-      <HStack pt={!promoted && 2}>
+      <HStack pl={3} pt={!promoted && 1}>
         <Box paddingLeft={3} borderRadius="md">
           <img
-            src={TeamsLogo}
+            src={
+              "https://upload.wikimedia.org/wikipedia/commons/c/c9/Microsoft_Office_Teams_%282018%E2%80%93present%29.svg"
+            }
             style={{ paddingBottom: 13 }}
             width="23px"
             height="23px"
             alt=""
           />
         </Box>
-        <VStack pb={3} align="start" pl={3} spacing={0}>
+        <VStack pb={1} align="start" pl={3} spacing={0}>
           <Text fontWeight="medium" fontSize="14px">
             UI/UX Designer
           </Text>
@@ -56,16 +66,16 @@ const JobCard = ({ promoted }) => {
           </Text>
         </VStack>
       </HStack>
-      <VStack align="start" pl={2} spacing={1}>
+      <VStack align="start" pl={4} spacing={1}>
         <HStack spacing={1}>
-          <Icon as={FiMapPin} color="#585D6E" boxSize={4} />
-          <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
+          <Icon as={FiMapPin} color="#585D6E" boxSize={3} />
+          <Text pl={2} fontWeight="medium" fontSize="12px" color="#585D6E">
             Seattle, USA (Remote)
           </Text>
         </HStack>
         <HStack spacing={1}>
-          <Icon as={FiClock} color="#585D6E" boxSize={4} />
-          <Text pl={1} fontWeight="medium" fontSize="12px" color="#585D6E">
+          <Icon as={FiClock} color="#585D6E" boxSize={3} />
+          <Text pl={2} fontWeight="medium" fontSize="12px" color="#585D6E">
             1 day ago
           </Text>
           <Divider
@@ -83,22 +93,52 @@ const JobCard = ({ promoted }) => {
             22 Applicants
           </Text>
         </HStack>
+        {!isMobile && (
+          <HStack pt={2}>
+            <Button
+              backgroundColor="primaryColor"
+              colorScheme="blue"
+              w="115px"
+              h="34px"
+              borderRadius="6"
+              fontWeight="medium"
+              fontSize="12px"
+            >
+              Apply Now
+            </Button>
+            <Spacer />
+            <Icon
+              as={FiBookmark}
+              // pl={2}
+              fontSize="22px"
+              color="#AAAAAA"
+              cursor="pointer"
+            />
+          </HStack>
+        )}
       </VStack>
-      <Flex px={2} justifyContent="space-between" mt={2} align="center">
-        <Button
-          backgroundColor="primaryColor"
-          colorScheme="blue"
-          w="115px"
-          h="37px"
-          borderRadius="6"
-          fontWeight="medium"
-          fontSize="12px"
-        >
-          Apply Now
-        </Button>
-        <Spacer />
-        <Icon as={FiBookmark} boxSize={6} color="#AAAAAA" cursor="pointer" />
-      </Flex>
+      {isMobile && (
+        <Flex px={2} justifyContent="space-between" mt={2} align="center">
+          <Button
+            backgroundColor="primaryColor"
+            colorScheme="blue"
+            w="115px"
+            h="34px"
+            borderRadius="6"
+            fontWeight="medium"
+            fontSize="12px"
+          >
+            Apply Now
+          </Button>
+          <Spacer />
+          <Icon
+            as={FiBookmark}
+            fontSize="22px"
+            color="#AAAAAA"
+            cursor="pointer"
+          />
+        </Flex>
+      )}
     </Box>
   );
 };

@@ -29,7 +29,13 @@ const Navbar = () => {
   const midScreen = useBreakpointValue({ base: true, md: false });
   const smallScreen = useBreakpointValue({ base: true, sm2: false });
   return (
-    <Box bg="white" px={{ base: 4, md: 10 }} py={3}>
+    <Box
+      borderBottom="1px"
+      borderColor="#adadad"
+      bg="white"
+      px={{ base: 4, md: 10 }}
+      py={3}
+    >
       <Flex align="center" justify="space-between" h="60px">
         {/* Left Section - Logo & Menu Icon */}
         <Flex align="center">
