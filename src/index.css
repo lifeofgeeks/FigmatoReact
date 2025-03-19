@@ -1,13 +1,51 @@
-body {
+/* body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplayThin.ttf") format("truetype");
+  font-weight: 100; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplayLight.ttf") format("truetype");
+  font-weight: 400; /* Normal */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplayRoman.ttf") format("truetype");
+  font-weight: 500; /* Normal */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplayMediu.ttf") format("truetype");
+  font-weight: 600; /* Normal */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplay-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neue Haas Display";
+  src: url("/public/fonts/NeueHaasDisplay-Black.ttf") format("truetype");
+  font-weight: 800; /* Extra Bold */
+  font-style: normal;
 }
